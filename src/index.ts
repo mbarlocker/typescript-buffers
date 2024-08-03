@@ -1,2 +1,10 @@
-export * as uuid from './uuid.js'
-export * as ip from './ip.js'
+import * as libUuid from './uuid.js'
+import * as libIp from './ip.js'
+
+export const uuid = libUuid
+export const ip = libIp
+
+export default {
+	uuid,
+	ip,
+}
