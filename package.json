@@ -1,7 +1,7 @@
 {
   "name": "@mbarlocker/typescript-buffers",
   "type": "commonjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Matthew Barlocker",
   "description": "Consistent conversion to and from buffers for various data types and representations.",
   "license": "MIT",
