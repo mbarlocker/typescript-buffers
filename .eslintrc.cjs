@@ -17,5 +17,8 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  rules: {
+    "@typescript-eslint/no-unsafe-argument": "off",
+  },
   root: true,
 }
