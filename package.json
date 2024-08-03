@@ -1,0 +1,66 @@
+{
+  "name": "@mbarlocker/typescript-buffers",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "author": "Matthew Barlocker",
+  "description": "Consistent conversion to and from buffers for various data types and representations.",
+  "license": "MIT",
+  "packageManager": "yarn@4.3.1",
+  "homepage": "https://github.com/mbarlocker/typescript-buffers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbarlocker/typescript-buffers.git"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "yarn.lock",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "yarn compile",
+    "clean": "rm -rf dist coverage",
+    "compile": "yarn compile:cjs && yarn compile:esm",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
+    "compile:esm": "tsc -p tsconfig.esm.json && ( echo '{\"type\": \"module\"}' > dist/esm/package.json )",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "env TZ=UTC vitest src --coverage --run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.2",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "ipaddr.js": "^2.2.0",
+    "tslib": "^2.6.3",
+    "uuid": "^10.0.0"
+  },
+  "keywords": [
+    "buffer",
+    "ipv4",
+    "ipv6",
+    "uuid",
+    "conversion"
+  ]
+}
