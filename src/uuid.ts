@@ -1,6 +1,6 @@
 import * as library from 'uuid'
 
-type InputBuffer = ArrayLike<number>
+type InputBuffer = Uint8Array
 
 export type Representation =
 	| string
@@ -71,7 +71,7 @@ export const equals = (value1: Representation | null, value2: Representation | n
 	return normalizeNullable(value1) === normalizeNullable(value2)
 }
 
-export const v1Buffer = (options?: library.V1Options): Buffer => {
+export const v1Buffer = (options?: library.Version1Options): Buffer => {
 	return stringToBuffer(library.v1(options))
 }
 
@@ -79,7 +79,7 @@ export const v3Buffer = (name: string | InputBuffer, namespace: string | InputBu
 	return stringToBuffer(library.v3(name, namespace))
 }
 
-export const v4Buffer = (options?: library.V4Options): Buffer => {
+export const v4Buffer = (options?: library.Version4Options): Buffer => {
 	return stringToBuffer(library.v4(options))
 }
 
@@ -87,11 +87,11 @@ export const v5Buffer = (name: string | InputBuffer, namespace: string | InputBu
 	return stringToBuffer(library.v5(name, namespace))
 }
 
-export const v6Buffer = (options?: library.V6Options): Buffer => {
+export const v6Buffer = (options?: library.Version6Options): Buffer => {
 	return stringToBuffer(library.v6(options))
 }
 
-export const v7Buffer = (options?: library.V7Options): Buffer => {
+export const v7Buffer = (options?: library.Version7Options): Buffer => {
 	return stringToBuffer(library.v7(options))
 }
 
